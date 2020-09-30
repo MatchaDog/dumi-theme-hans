@@ -1,0 +1,46 @@
+@import (reference) '../../style/variables.less';
+@import (reference) '../../style/theme.less';
+
+.slide-tab {
+    position: relative;
+    display: inline-flex;
+    line-height: 34px;
+    padding: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s;
+    border-radius: 8px;
+    white-space: nowrap;
+    user-select: none;
+    .slide-tab-item {
+        position: relative;
+        font-size: 14px;
+        font-weight: 600;
+        color: @subtitle-color;
+        line-height: 20px;
+        padding: 5px 8px;
+        z-index: 2;
+        transition: color 0.3s;
+        cursor: pointer;
+        &.active {
+            color: @primary-color__;
+        }
+    }
+    .active-bg-tab {
+        position: absolute;
+        border-radius: 8px;
+        height: 30px;
+        background-color: @white;
+        left: 0;
+        top: 2px;
+        transition: all 0.3s;
+    }
+    .ant-dropdown-menu {
+        &-item {
+            &.active {
+                a {
+                    color: @primary-color__;
+                }
+            }
+        }
+    }
+}

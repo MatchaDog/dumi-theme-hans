@@ -1,0 +1,44 @@
+{
+    "name": "dumi-theme-hans",
+    "version": "0.0.1",
+    "description": "Custom theme for dumi",
+    "main": "index.js",
+    "scripts": {
+        "pub": "npm publish"
+    },
+    "keywords": [
+        "dumi",
+        "dumi-theme",
+        "doc"
+    ],
+    "homepage": "https://github.com/MatchaDog/dumi-theme-hans",
+    "bugs": {
+        "email": "matchahans@163.com",
+        "url": "https://github.com/MatchaDog/dumi-theme-hans/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/MatchaDog/dumi-theme-hans.git"
+    },
+    "author": "Hans",
+    "license": "ISC",
+    "dependencies": {
+        "@umijs/types": "^3.2.22",
+        "antd": "^4.6.6",
+        "classnames": "^2.2.6",
+        "dumi": "^1.0.34",
+        "hooooks": "^1.0.21",
+        "prism-react-renderer": "^1.1.1"
+    },
+    "devDependencies": {
+        "@commitlint/cli": "^11.0.0",
+        "@commitlint/config-conventional": "^11.0.0",
+        "@typescript-eslint/eslint-plugin": "^4.3.0",
+        "@typescript-eslint/parser": "^4.3.0",
+        "eslint": "^7.10.0",
+        "eslint-plugin-react-hooks": "^4.1.2",
+        "husky": "^4.3.0",
+        "lint-staged": "^10.4.0",
+        "prettier": "^2.1.2"
+    }
+}

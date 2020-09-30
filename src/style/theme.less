@@ -1,0 +1,63 @@
+@white: var(--white);
+@darken-white1: var(--darken-white);
+@primary-color__: var(--primary-color__);
+@primary-color-hover: var(--primary-color-hover);
+@primary-color-active: var(--primary-color-active);
+@success-color__: var(--success-color__);
+@error-color__: var(--error-color__);
+@warn-color: var(--warn-color);
+@link-color: var(--link-color);
+@border-color: var(--border-color);
+@title-color: var(--title-color);
+@subtitle-color: var(--subtitle-color);
+@second-color: var(--second-color);
+@block-quote-color: --block-quote-color;
+@code-bg: var(--code-bg);
+@header-box-shadow: var(--header-box-shadow);
+@previewer-target-color: --previewer-target-color; // rgba(23, 125, 220, 0.5)
+@previewer-target-box-shadow-color: --previewer-target-box-shadow-color; // rgba(23, 125, 220, 0.05)
+
+body,
+body[data-theme="default"] {
+    --theme: default;
+    --white: #fff;
+    --darken-white: #f8f8f8;
+    --primary-color__: #1890ff;
+    --primary-color-hover: #329cff;
+    --primary-color-active: #2797ff;
+    --success-color__: #52c41a;
+    --error-color__: #f5222d;
+    --warn-color: #fa8c16;
+    --link-color: #1890ff;
+    --border-color: #d9d9d9;
+    --title-color: rgba(0, 0, 0, 0.85);
+    --subtitle-color: rgba(0, 0, 0, 0.65);
+    --second-color: rgba(0, 0, 0, 0.45);
+    --block-quote-color: rgba(0, 0, 0, 0.55);
+    --code-bg: #f5f5f5;
+    --header-box-shadow: #f0f1f2;
+    --previewer-target-color: rgba(24, 144, 255, 0.5); // rgba(23, 125, 220, 0.5)
+    --previewer-target-box-shadow-color: rgba (24, 144, 255, 0.05); // rgba(23, 125, 220, 0.05)
+}
+
+body[data-theme="dark"] {
+    --theme: dark;
+    --white: #141414;
+    --darken-white: #111111;
+    --primary-color: #177ddc;
+    --primary-color-hover: #248ae8;
+    --primary-color-active: #1b85e7;
+    --success-color: #49aa19;
+    --error-color: #d32029;
+    --warn-color: #d89614;
+    --link-color: #177ddc;
+    --border-color: #434343;
+    --title-color: rgba(255, 255, 255, 0.85);
+    --subtitle-color: rgba(255, 255, 255, 0.65);
+    --second-color: rgba(255, 255, 255, 0.45);
+    --block-quote-color: rgba(20, 20, 20, 0.7);
+    --code-bg: #141414;
+    --header-box-shadow: rgba(0, 0, 0, 0.65);
+    --previewer-target-color: rgba(23, 125, 220, 0.5);
+    --previewer-target-box-shadow-color: rgba(23, 125, 220, 0.05);
+}

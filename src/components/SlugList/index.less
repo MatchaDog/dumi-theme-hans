@@ -1,0 +1,61 @@
+@import (reference) "../../style/variables.less";
+@import (reference) "../../style/theme.less";
+
+.@{prefix}-slug-list {
+    position: fixed;
+    right: 40px;
+    top: 30%;
+    width: 150px;
+    z-index: 10;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    > li {
+        list-style: none;
+        margin: 0 0 10px 0;
+        cursor: pointer;
+        > a {
+            display: flex;
+            align-items: center;
+            color: @second-color;
+        }
+        &:hover,
+        &.active {
+            .@{prefix}-slug-list-item-text {
+                opacity: 1;
+                color: @title-color;
+            }
+            .@{prefix}-slug-list-item-circle {
+                background-color: @title-color;
+            }
+        }
+    }
+    &:hover {
+        .@{prefix}-slug-list-item-text {
+            opacity: 1;
+            color: @second-color;
+        }
+    }
+    &-item-circle {
+        width: 16px;
+        height: 4px;
+        border-radius: 20px;
+        transition: background 0.38s;
+        background-color: @second-color;
+    }
+    &-item-text {
+        font-size: 12px;
+        line-height: 17px;
+        transition: opacity 0.38s;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: 600;
+        display: inline-block;
+        opacity: 0;
+        width: 150px;
+        vertical-align: middle;
+        margin-left: 8px;
+    }
+}

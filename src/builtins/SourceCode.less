@@ -1,0 +1,77 @@
+@import (reference) "../style/variables.less";
+@import (reference) "../style/theme.less";
+
+.@{prefix}-code-block {
+    position: relative;
+    background-color: @code-bg;
+    margin-bottom: 36px;
+    & + & {
+        margin-top: 16px;
+    }
+
+    > pre[class*="language-"] {
+        margin: 0;
+        background: transparent;
+
+        .token-line {
+            &:not(:last-child) {
+                .plain:empty {
+                    display: inline-block;
+                    min-height: 1em;
+                }
+            }
+            &:last-child {
+                display: none;
+            }
+        }
+    }
+
+    &-copy-btn {
+        position: absolute !important;
+        top: 1.1em !important;
+        right: 1em !important;
+        display: inline-block !important;
+        width: 16px !important;
+        height: 16px !important;
+        border: 0 !important;
+        outline: none !important;
+        cursor: pointer;
+        opacity: 0.6 !important;
+        transition: opacity 0.2s, background 0.2s !important;
+
+        &:hover {
+            opacity: 0.8;
+        }
+
+        &:active {
+            opacity: 0.9;
+        }
+
+        &[data-status="ready"] {
+            background-position: -54px 0;
+        }
+
+        &[data-status="copied"] {
+            opacity: 1;
+            pointer-events: none;
+            background-position: -54px -16px;
+        }
+    }
+
+    &:not(:hover) &-copy-btn {
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    code[class*="language-"],
+    pre[class*="language-"] {
+        text-shadow: none;
+        font-family: Source Code Variable, VaMenlo, Monaco, "Courier New", monospace;
+    }
+
+    .token {
+        &.operator {
+            background-color: transparent;
+        }
+    }
+}

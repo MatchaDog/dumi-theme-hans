@@ -1,0 +1,31 @@
+@import (reference) '../../style/variables.less';
+@import (reference) '../../style/theme.less';
+
+.@{prefix}-layout-footer-meta{
+    margin-top: 40px;
+    padding-top: 24px;
+    display: flex;
+    color: @subtitle-color;
+    font-size: 14px;
+    justify-content: space-between;
+    border-top: 1px solid @border-color;
+    
+    @media only screen and (max-width: 960px) {
+      display: block;
+    }
+    
+    > a {
+      margin-bottom: 4px;
+      display: block;
+      color: @primary-color__;
+      text-decoration: none;
+    }
+    
+    > span:last-child {
+      &::before {
+        content: attr(data-updated-text);
+        color: @primary-color__;
+      }
+    }
+}
+

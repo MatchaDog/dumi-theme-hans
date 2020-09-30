@@ -1,0 +1,48 @@
+@import (reference) '../../style/variables.less';
+@import (reference) '../../style/theme.less';
+
+.@{prefix}-header{
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    max-width: 100%;
+    background: @white;
+    box-shadow: 0 2px 8px @header-box-shadow;
+    &-bar{
+        height: 64px;
+        line-height:64px;  
+        padding: 0 58px;
+    }
+    &-logo {
+        padding-left: 60px;
+        display: inline-block;
+        color: @title-color;
+        font-weight: 500;
+        text-decoration: none;
+        font-size: 24px;
+        line-height: 40px;
+        height: 40px;
+        background: no-repeat 0/contain;
+    }
+    &-divider {
+        font-size: 32px;
+    }
+    .slide-tab {
+        .active-bg-tab {
+            top: unset;
+            bottom: -2px;
+            height: 3px;
+            background-color: @primary-color__;
+        }
+        .slide-tab-item {
+            padding: 0;
+            margin-right: 50px;
+            color: @subtitle-color;
+            line-height: 30px;
+            font-weight: normal;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
