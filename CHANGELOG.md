@@ -2,7 +2,7 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### 0.0.4 (2020-10-09)
+## [0.0.4](https://github.com/MatchaDog/dumi-theme-hans/compare/6642cd67b9e5e5162d4528079c3503a1739b7b2d...v0.0.4) (2020-10-09)
 
 
 ### Features
