@@ -15,8 +15,8 @@ const Header: FC = () => {
         base,
         config: { logo, title },
         menu,
-        meta,
     } = useContext(context);
+    const tabMenu = menu.filter((i) => i.path !== "/");
     const { state, dispatch } = useContext(ThemeStore);
     const setTheme = useCallback(
         (type: string) => {
@@ -100,7 +100,7 @@ const Header: FC = () => {
                 </Col>
                 <Col xs={24} sm={22} md={22} lg={15} xl={17} xxl={18}>
                     <Row justify="space-between" align="middle" style={{ flex: 1 }}>
-                        <SlideTab tabData={menu} tabLabel="title" tabKey="title"></SlideTab>
+                        <SlideTab tabData={tabMenu} tabLabel="title" tabKey="title"></SlideTab>
                     </Row>
                 </Col>
                 <Col xs={0} sm={2} md={2} lg={1} xl={1} xxl={1}>

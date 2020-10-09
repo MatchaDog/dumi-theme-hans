@@ -2,7 +2,7 @@
  * @Date: 2020-09-29 18:02:43
  * @LastEditors: Hans
  * @description:
- * @LastEditTime: 2020-09-29 18:09:45
+ * @LastEditTime: 2020-10-09 11:00:04
  * @FilePath: /dumi-theme-hans/src/components/Footer/Footer.tsx
  */
 import React, { useContext, FC } from "react";
@@ -15,12 +15,13 @@ const Footer: FC = () => {
         meta,
         locale,
     } = useContext(context);
-    console.log(locale, locales);
     const { url: repoUrl, branch } = repository;
     const repoPlatform = { github: "GitHub", gitlab: "GitLab" }[
         (repoUrl || "").match(/(github|gitlab)/)?.[1] || "nothing"
     ];
-    const updatedTime: any = new Date(meta.updatedTime).toLocaleString();
+    const updatedTime: any = meta.updatedTime
+        ? new Date(meta.updatedTime).toLocaleString()
+        : new Date().toLocaleString();
     const isCN =
         locale === "zh-CN" ||
         (locale === "*" && locales[0]?.name === "zh-CN") ||
