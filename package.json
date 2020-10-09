@@ -1,10 +1,11 @@
 {
     "name": "dumi-theme-hans",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "Custom theme for dumi",
     "main": "index.js",
     "scripts": {
-        "pub": "npm publish"
+        "pub": "npm publish",
+        "release": "standard-version"
     },
     "keywords": [
         "dumi",
@@ -39,6 +40,7 @@
         "eslint-plugin-react-hooks": "^4.1.2",
         "husky": "^4.3.0",
         "lint-staged": "^10.4.0",
-        "prettier": "^2.1.2"
+        "prettier": "^2.1.2",
+        "standard-version": "^9.0.0"
     }
 }
