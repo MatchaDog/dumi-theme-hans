@@ -1,10 +1,10 @@
 import "./index.less";
 
-import React, { FC, useState, useRef, useCallback, CSSProperties } from "react";
+import React, { FC, useState, useRef, useCallback, CSSProperties, useContext } from "react";
 import { useDidUpdate, useDidMount } from "hooooks";
 import cls from "classnames";
 
-import { NavLink } from "dumi/theme";
+import { NavLink, context } from "dumi/theme";
 import { Dropdown, Menu } from "antd";
 
 const SlideTab: FC<{
@@ -15,7 +15,8 @@ const SlideTab: FC<{
     value?: any;
     className?: string;
     style?: CSSProperties;
-}> = ({ tabData, tabKey, tabLabel, className, style }) => {
+}> = ({ tabData, tabKey, tabLabel, className }) => {
+    const { meta } = useContext(context);
     const ref = useRef<HTMLDivElement>();
     const [activeTab, setActiveTab] = useState(tabData[0]);
     const [activeMenu, setActiveMenu] = useState(null);
@@ -23,17 +24,19 @@ const SlideTab: FC<{
         left: 0,
         width: 0,
     });
-
     const handleSetInkBar = useCallback(() => {
+        const curRoute = meta;
         const index = tabData.findIndex((item) => {
-            return item[tabKey] === activeTab[tabKey];
+            return curRoute.filePath.includes(item[tabKey]);
         });
         const child = ref.current.children[index] as HTMLSpanElement;
         setInkBar({
             left: child.offsetLeft,
             width: child.offsetWidth,
         });
-    }, [tabKey, activeTab, tabData]);
+        setActiveMenu(meta.legacy);
+        setActiveTab(tabData[index]);
+    }, [tabKey, tabData, meta]);
 
     const handleTabChange = (item) => {
         setActiveTab(item);

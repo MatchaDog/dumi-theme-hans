@@ -1,6 +1,6 @@
 import "./index.less";
 
-import React, { FC, useState, useContext, useEffect, useCallback } from "react";
+import React, { FC, useContext, useEffect, useCallback } from "react";
 
 import { context, Link } from "dumi/theme";
 import { ThemeStore } from "../../store/ThemeProvider";
