@@ -26,6 +26,15 @@ const SlideTab: FC<{
     });
     const handleSetInkBar = useCallback(() => {
         const curRoute = meta;
+        if (!curRoute || !curRoute.filePath) {
+            setInkBar({
+                left: 0,
+                width: 0,
+            });
+            setActiveTab({});
+            setActiveMenu(null);
+            return;
+        }
         const index = tabData.findIndex((item) => {
             return curRoute.filePath.includes(item[tabKey]);
         });
