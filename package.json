@@ -1,6 +1,6 @@
 {
     "name": "dumi-theme-hans",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "Custom theme for dumi",
     "main": "index.js",
     "scripts": {
