@@ -47,33 +47,52 @@ const SlideTab: FC<{
         setActiveTab(tabData[index]);
     }, [tabKey, tabData, meta]);
 
-    const handleTabChange = (item) => {
+    const handleTabChange = (item, index) => {
         setActiveTab(item);
+        const child = ref.current.children[index] as HTMLSpanElement;
+        setInkBar({
+            left: child.offsetLeft,
+            width: child.offsetWidth,
+        });
     };
 
-    const handleMenuClick = (item, { key }) => {
+    const handleMenuClick = (item, index, { key }) => {
         setActiveTab(item);
+        const child = ref.current.children[index] as HTMLSpanElement;
+        setInkBar({
+            left: child.offsetLeft,
+            width: child.offsetWidth,
+        });
         setActiveMenu(key);
     };
-
-    useDidUpdate(() => {
-        handleSetInkBar();
-    }, [activeTab]);
 
     useDidMount(() => {
         handleSetInkBar();
     });
 
+    useDidUpdate(() => {
+        const curRoute = meta;
+        if (!curRoute || !curRoute.filePath) {
+            setInkBar({
+                left: 0,
+                width: 0,
+            });
+            setActiveTab({});
+            setActiveMenu(null);
+            return;
+        }
+    }, [meta]);
+
     return (
         <div className={cls("slide-tab", { className })} ref={ref}>
             {tabData.length > 0 &&
-                tabData.map((item) =>
+                tabData.map((item, index) =>
                     item.children && item.children.length > 0 ? (
                         <Dropdown
                             getPopupContainer={() => document.querySelector(".slide-tab")}
                             key={item.path}
                             overlay={
-                                <Menu onClick={(e) => handleMenuClick(item, e)}>
+                                <Menu onClick={(e) => handleMenuClick(item, index, e)}>
                                     {item.children.map((c) => (
                                         <Menu.Item
                                             key={c.path}
@@ -102,7 +121,7 @@ const SlideTab: FC<{
                                     active: item[tabKey] === activeTab[tabKey],
                                 })}
                                 onClick={() => {
-                                    handleTabChange(item);
+                                    handleTabChange(item, index);
                                 }}>
                                 {item[tabLabel]}
                             </span>
